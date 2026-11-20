@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0f172a" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'" />
   <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="icons/icon-512.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
   <title>TUOBA Ultimate All-in-One Multilingual Enterprise</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -16,22 +20,25 @@
         <p id="app-subtitle">تشغيل + POS + مالية + HR + كول سنتر + أمان + جودة + مدفوعات</p>
       </div>
       <div class="toolbar">
+        <label class="sr-only" for="brand-select">Brand</label>
         <select id="brand-select" class="select compact"></select>
+        <label class="sr-only" for="branch-select">Branch</label>
         <select id="branch-select" class="select compact"></select>
       </div>
       <div class="toolbar">
+        <label class="sr-only" for="lang-select">Language</label>
         <select id="lang-select" class="select compact"></select>
-        <button class="btn soft" onclick="exportData()" id="export-btn">تصدير</button>
+        <button class="btn soft" id="export-btn">تصدير</button>
       </div>
       <div class="toolbar">
-        <button class="btn soft" onclick="simulateBiometric()" id="passkey-btn">Passkey</button>
-        <button class="btn soft" onclick="getCurrentLocation()" id="location-btn">الموقع</button>
+        <button class="btn soft" id="passkey-btn">Passkey</button>
+        <button class="btn soft" id="location-btn">الموقع</button>
       </div>
     </header>
 
     <main id="content" class="content"></main>
 
-    <nav class="bottom-nav">
+    <nav class="bottom-nav" aria-label="Main">
       <button data-tab="overview" class="nav-btn active"></button>
       <button data-tab="pos" class="nav-btn"></button>
       <button data-tab="orders" class="nav-btn"></button>
@@ -51,6 +58,6 @@
       <button data-tab="reports" class="nav-btn"></button>
     </nav>
   </div>
-  <script src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

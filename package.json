@@ -1,0 +1,16 @@
+{
+  "name": "tuoba-ai-restaurant-os",
+  "version": "1.1.0",
+  "private": true,
+  "description": "TUOBA Ultimate All-in-One Multilingual Enterprise — POS/KDS/Finance/HR/Call Center PWA",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check app.js && node --check lib/escape.js && node --check lib/ids.js && node --check lib/finance.js && node --check lib/csv.js && node --check lib/attendance.js && node --check lib/validation.js",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
